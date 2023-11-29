@@ -41,12 +41,12 @@ export default function RegisterForm() {
         setRegister({ ...register, [e.target.name]: e.target.value })
     }
     return (
-        <div className='w-[400px] ml-12 pt-6 pb-8 pr-10 pl-10 border rounded-lg shadow-lg'>
+        <div className='w-[400px] ml-12 max-md:ml-0 pt-6 pb-8 pr-10 pl-10 border rounded-lg shadow-lg'>
             <div className='my-7'>
                 <p className='text-2xl font-bold text-gray-600 text-center'>Register Now</p>
                 <p className='text-center'>
                     <span className='text-sm pr-1'>Already have tokopaedi account?</span>
-                    <Link href={'/login'} className='text-green-600'>Login</Link>
+                    <Link href={'/login'} className='text-blue-600'>Login</Link>
                 </p>
             </div>
             <form onSubmit={onSubmit}>

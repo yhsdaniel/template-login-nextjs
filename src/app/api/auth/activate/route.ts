@@ -1,7 +1,7 @@
 import { prisma } from '@/lib/prisma'
 import { NextRequest, NextResponse } from 'next/server'
 
-export const GET = async (req: NextRequest) => {
+export const POST = async (req: NextRequest) => {
     const body = await req.json()
     const { id } = body
     try {

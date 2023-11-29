@@ -48,13 +48,14 @@ export default function LoginForm() {
                     <span className="text-3xl font-bold text-gray-600">Login</span>
                     <Link href='/register' className="text-sm text-blue-500">Register</Link>
                 </div>
-                <form onSubmit={onSubmit} className="mt-10">
+                <form onSubmit={onSubmit} autoComplete="off" className="mt-10">
                     <div className='mb-4'>
                         <Label className="text-gray-500 font-bold">Email</Label><br />
                         <Input
                             required
                             type='text'
                             name='email'
+                            autoComplete="false"
                             className="rounded border-gray-300 h-9"
                             value={login.email}
                             onChange={handleChange}
@@ -66,6 +67,7 @@ export default function LoginForm() {
                             required
                             type='password'
                             name='password'
+                            autoComplete="false"
                             className="rounded border-gray-300 h-9"
                             value={login.password}
                             onChange={handleChange}
