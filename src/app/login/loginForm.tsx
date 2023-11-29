@@ -55,7 +55,7 @@ export default function LoginForm() {
                             required
                             type='text'
                             name='email'
-                            autoComplete="false"
+                            autoComplete="off"
                             className="rounded border-gray-300 h-9"
                             value={login.email}
                             onChange={handleChange}
@@ -67,7 +67,7 @@ export default function LoginForm() {
                             required
                             type='password'
                             name='password'
-                            autoComplete="false"
+                            autoComplete="off"
                             className="rounded border-gray-300 h-9"
                             value={login.password}
                             onChange={handleChange}
