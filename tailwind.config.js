@@ -51,6 +51,9 @@ module.exports = {
           foreground: "hsl(var(--card-foreground))",
         },
       },
+      backgroundImage: {
+        'bg-register': "url('./public/images/logo-register.jpg')"
+      },
       // borderRadius: {
       //   lg: "var(--radius)",
       //   md: "calc(var(--radius) - 2px)",

@@ -1,12 +1,11 @@
 import Navbar from '@/components/Navbar'
 import './globals.css'
 import type { Metadata } from 'next'
-import { Montserrat, Baumans } from 'next/font/google'
+import { Montserrat } from 'next/font/google'
 import { Toaster } from 'react-hot-toast'
 import Provider from '@/components/Provider'
 
 const inter = Montserrat({ subsets: ['latin'] })
-const baumans = Baumans({ subsets: ['latin'], weight: '400' })
 
 export const metadata: Metadata = {
   title: 'Tokopaedi',
