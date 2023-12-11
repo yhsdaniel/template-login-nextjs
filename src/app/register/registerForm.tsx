@@ -30,8 +30,6 @@ export default function RegisterForm() {
             toast.success('Please visit your email address and active your account', {
                 duration: 10000
             })
-            // toast.success('Successfully Register!')
-            // router.push('/login')
         } catch (error: any) {
             toast.error('Username and email already exists')
         }

@@ -27,8 +27,9 @@ export default function LoginForm() {
                 redirect: false,
             })
             if (signInData?.ok) {
-                router.push('/admin')
+                toast.success('Logged in successfully!')
                 router.refresh()
+                // router.push('/admin')
             } else {
                 toast.error('Email and password invalid!')
             }

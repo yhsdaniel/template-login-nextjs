@@ -9,7 +9,6 @@ const GoogleButton = () => {
     const { status } = useSession()
 
     if(status === 'authenticated'){
-        toast.success('Logged in successfully!')
         router.refresh()
         router.push('/admin')
     }
