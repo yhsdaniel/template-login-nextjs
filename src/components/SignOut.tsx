@@ -8,7 +8,7 @@ const SignOut = () => {
     <Button onClick={() => signOut({
       redirect: true,
       callbackUrl: `${window.location.origin}/login`
-    })} className="border border-gray-600 rounded px-4 py-2 duration-150 ease-in bg-red-500 text-gray-300 hover:bg-red-600 hover:text-gray-500">Logout</Button>
+    })} className="rounded px-4 py-1 duration-150 ease-in bg-red-400 hover:bg-red-500 text-white">Logout</Button>
   )
 }
 

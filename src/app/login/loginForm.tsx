@@ -1,7 +1,6 @@
 'use client'
 
 import { ChangeEvent, useState } from "react"
-import { useRouter } from "next/navigation"
 import { signIn } from "next-auth/react"
 import Link from "next/link"
 import { Label } from "@/components/ui/label"
@@ -15,7 +14,7 @@ export default function LoginForm() {
         email: "",
         password: ""
     })
-    const router = useRouter()
+    // const router = useRouter()
 
     const onSubmit: React.FormEventHandler<HTMLFormElement> = async (e) => {
         e.preventDefault()
@@ -28,7 +27,7 @@ export default function LoginForm() {
             })
             if (signInData?.ok) {
                 toast.success('Logged in successfully!')
-                router.refresh()
+                // router.refresh()
                 // router.push('/admin')
             } else {
                 toast.error('Email and password invalid!')

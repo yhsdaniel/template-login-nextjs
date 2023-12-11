@@ -11,8 +11,14 @@ export default async function middleware(req: NextRequest) {
     if(isAuthenticated && req.nextUrl.pathname.startsWith('/login')){
         return NextResponse.redirect(new URL('/admin', req.url))
     }
+    if(isAuthenticated && req.nextUrl.pathname.startsWith('/register')){
+        return NextResponse.redirect(new URL('/', req.url))
+    }
+    if(!isAuthenticated && req.nextUrl.pathname.startsWith('/admin')){
+        return NextResponse.redirect(new URL('/login', req.url))
+    }
 }
 
-export const config = {
-    matcher: ['/admin'],
-}
+// export const config = {
+//     matcher: ['/admin'],
+// }

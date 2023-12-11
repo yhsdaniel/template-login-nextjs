@@ -1,11 +1,12 @@
-import { authOptions } from '@/lib/auth'
-import { getServerSession } from 'next-auth'
+'use client'
+
 import Link from 'next/link'
 import React from 'react'
 import SignOut from './SignOut'
+import { useSession } from 'next-auth/react'
 
-export default async function Navbar() {
-    const session = await getServerSession(authOptions)
+export default function Navbar() {
+    const { data: session, status } = useSession()
 
     return (
         <div className='bg-white py-4 w-full z-10 top-0 h-16 relative'>
@@ -17,9 +18,9 @@ export default async function Navbar() {
                 </div>
                 <div className='flex justify-center items-center flex-1'>
                     <p className='mx-8 italic'>{session?.user.name || session?.user.username}</p>
-                    {!session?.user 
-                    ? (
-                        <Link className='rounded px-4 py-1 duration-150 ease-in bg-blue-400 hover:bg-blue-500 text-white' href='/login'>
+                    {!session ? 
+                    (
+                        <Link href={'/login'} className='rounded px-4 py-1 duration-150 ease-in bg-blue-400 hover:bg-blue-500 text-white' >
                             Login
                         </Link>
                     ) : (

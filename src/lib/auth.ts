@@ -6,7 +6,7 @@ import { compare } from "bcrypt";
 
 export const authOptions: NextAuthOptions = {
     secret: process.env.NEXTAUTH_SECRET,
-    session: { strategy: 'jwt', maxAge: 1 * 1 * 1 * 60},
+    session: { strategy: 'jwt', maxAge: 1 * 24 * 60 * 60 },
     // debug: process.env.NODE_ENV === "development",
     pages: {
         signIn: '/login',
@@ -53,11 +53,11 @@ export const authOptions: NextAuthOptions = {
     ],
     callbacks: {
         async jwt({ token, user }) {
-            if(user){
+            if (user) {
                 const existingUser = await prisma.user.findUnique({
                     where: { email: user.email }
                 })
-                if(!existingUser){
+                if (!existingUser) {
                     await prisma.user.create({
                         data: {
                             email: user.email as string,
@@ -66,7 +66,7 @@ export const authOptions: NextAuthOptions = {
                         }
                     })
                 }
-                return{
+                return {
                     ...token,
                     username: user.username
                 }
@@ -81,6 +81,9 @@ export const authOptions: NextAuthOptions = {
                     username: token.username
                 }
             }
+        },
+        async redirect({ baseUrl }) {
+            return baseUrl
         }
     }
 }
